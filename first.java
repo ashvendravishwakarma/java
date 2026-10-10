@@ -2,19 +2,28 @@ import java.util.Scanner;
 public class first {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the guess number :");
-        int sec_num=sc.nextInt();
-        
-        int number=9;
-        if (sec_num == number){
-            System.out.println("Correct Guess");
-        }else if (sec_num > number){
-            System.out.println("Too high");
-        }else if(sec_num < number ){
-            System.out.println("TOO low");
+        int pin =sc.nextInt();
+        int c_pin =2468;
+
+        if (pin == c_pin){
+            System.out.println("Access Granted");
         }else{
-            System.out.println("Invalid number");
+            System.out.println("Access Denied");
         }
+
+        // System.out.println("Enter the guess number :");
+        // int sec_num=sc.nextInt();
+        
+        // int number=9;
+        // if (sec_num == number){
+        //     System.out.println("Correct Guess");
+        // }else if (sec_num > number){
+        //     System.out.println("Too high");
+        // }else if(sec_num < number ){
+        //     System.out.println("TOO low");
+        // }else{
+        //     System.out.println("Invalid number");
+        // }
 
     //     String pass=sc.nextLine();
 
