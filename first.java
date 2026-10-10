@@ -10,11 +10,18 @@ public class first {
             bill= e_unit * 5;
             System.out.println("Bill :" + bill + " ruppes");
         }else if(e_unit>=101 && e_unit<=200 ){
-             bill= e_unit * 7;
+            
+            int n=e_unit-100;
+            bill=(n*7) +500;
             System.out.println("Bill :" + bill +" rupees");
-        }else{
-             bill= e_unit * 10;
+        }else if( e_unit >200){
+             int n=e_unit-200;
+             bill =(n*10) +1200;
+            
             System.out.println("Bill :" + bill +" ruppes");
+        }else {
+            System.out.println("Invalid Input");
+
         }
         
 
