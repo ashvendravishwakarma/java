@@ -1,18 +1,38 @@
-import java.util.Scanner;
-public class input {
 
+public class input{
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        int[] arr=new int[n];
+        Student s1=new Student();
+        Student s2 =new Student();
 
-        for (int i=0;i<arr.length;i++){
-            arr[i]=sc.nextInt();
+        s1.name="ashvendra";
+        s1.age=29;
+        s1.rollnum=101;
+        s1.collage="JNCT";
+
+        s2.name="magan";
+        s2.age=22;
+        s2.rollnum=102;
+        s2.collage="JNCT";
+
+        s1.markAttendenc();
+        s2.markAttendenc();
+
+        s1.print();
+        s2.print();
+
         }
-        sc.close();
-        for (int j=0;j<arr.length;j++){
-            System.out.print(arr[j]+" " );
-            
-        }
+    }
+class Student{
+    String name;
+    int age;
+    int rollnum;
+    String collage;
+
+    void markAttendenc(){
+        System.out.println("Attendence marked by :"  + name);
+    }
+
+    void print(){
+        System.out.println(name + " , "+ age + " , " + rollnum + " , "+collage);
     }
 }
