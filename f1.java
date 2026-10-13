@@ -16,7 +16,7 @@ public class f1 {
             mid = (low + high)/2;
             if (arr[mid] == target){
                 index = mid;
-                high = mid-1;
+                low = mid +1;
                 
                 
             }else if (arr[mid]< target) {
