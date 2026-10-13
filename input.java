@@ -1,38 +1,34 @@
-
 public class input{
-    public static void main(String[] args) {
-        Student s1=new Student();
-        Student s2 =new Student();
+    static class Car{
+        int price;
+        String brand;
+    }
 
-        s1.name="ashvendra";
-        s1.age=29;
-        s1.rollnum=101;
-        s1.collage="JNCT";
+    static class Rectangle{
+        int length;
+        int width;
 
-        s2.name="magan";
-        s2.age=22;
-        s2.rollnum=102;
-        s2.collage="JNCT";
-
-        s1.markAttendenc();
-        s2.markAttendenc();
-
-        s1.print();
-        s2.print();
+        Rectangle(int l, int w){
+            length =l;
+            width=w;
 
         }
-    }
-class Student{
-    String name;
-    int age;
-    int rollnum;
-    String collage;
 
-    void markAttendenc(){
-        System.out.println("Attendence marked by :"  + name);
+        void area(){
+            System.out.println("area of the Rectengle :"+(length*width));
+        }
     }
 
-    void print(){
-        System.out.println(name + " , "+ age + " , " + rollnum + " , "+collage);
+    public static void main(String[] args) {
+        // Car c1 = new Car();
+        // c1.price = 500000;
+        // c1.brand = "BMW";
+        // System.out.println(c1.price);
+        // System.out.println(c1.brand);
+
+        Rectangle r1=new Rectangle(10,5);
+        r1.area();
+
+
     }
 }
