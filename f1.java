@@ -1,52 +1,36 @@
 
-import java.util.Arrays;
-
 public class f1 {
-
-    public int binarySearch(int[] arr, int size, int target) {
-        int low = 0;
-        int high = size - 1;
-
-        while (low <= high) {
-            int mid = (low + high) / 2;
-
-            if (arr[mid] == target) {
-                return mid;
-            } else if (arr[mid] > target) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return -1;
-    }
-    public static void main(String[] args) {
-        int[] b = {5, 15, 25, 35, 45};
-        System.out.println(Arrays.toString(b));
-        
-
-        // BINARY SEARCH
-        int[] even = {1,5,6,9,34,56};
-        int[] odd = {2,4,6,8,6,56};
-
-        int index = binarySearch(even,6,56);
-        System.out.println("index"+ index);
-        
-
-
-
-
-
-
-
-
-
-
-        }
-  
-
-
-
     
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 4, 4, 6, 8, 10};
+        int target = 4;
+
+        int low = 0 ;
+        int high = arr.length - 1;
+        int index =0;
+        
+
+        int mid = ( low + high ) / 2;
+
+        while  (low<=high){
+            mid = (low + high)/2;
+            if (arr[mid] == target){
+                index = mid;
+                high = mid-1;
+                
+                
+            }else if (arr[mid]< target) {
+                    low = mid + 1;
+            }else{
+                    high=mid-1;
+                }
+            }
+            System.out.println("Last occurrence found at index:"+index);
+        }
+        
+
+
+
+
+        
 }
