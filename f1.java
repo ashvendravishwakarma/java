@@ -2,34 +2,31 @@
 public class f1 {
     
     public static void main(String[] args) {
-        Book b1 = new Book("Rich Dad Poor Ded",450);
-        System.out.println(b1.title + "    "+ b1.price);
+        Phone p1 = new Phone();
+        Phone p2 = new Phone();
+        Phone p3 = new Phone();
 
-        car c1 = new car();
+        p1.brand="Samsung";
+        p1.price=30000;
 
-        System.out.println(c1.brand);
+        p2.brand="oppo";
+        p2.price=50000;
+
+        p3.brand="Apple";
+        p3.price=100000;
+
+        p1.show();
+        p2.show();
+        p3.show();
         
         }   
-        
-class Studen{
-    String name;
-    int roll_nom;
-}
-
-static class Book{
-    String title;
+static class Phone{
+    String brand;
     int price;
 
-    Book(String title ,int price){
-        this.title=title;
-        this.price=price;
-    }
-}
-static class car{
-    String brand;
-
-    car(){
-        brand="Unknown";
+    void show(){
+        System.out.println("Brand: "+brand);
+        System.out.println("Price : "+price);
     }
 }
 }
