@@ -2,45 +2,34 @@
 public class f1 {
     
     public static void main(String[] args) {
-        int[] arr = {2, 4, 4, 4, 6, 8, 10};
-        int target = 4;
+        Book b1 = new Book("Rich Dad Poor Ded",450);
+        System.out.println(b1.title + "    "+ b1.price);
 
-        int low = 0 ;
-        int high = arr.length - 1;
-        int fastoc=0;
-        int lastoc=0;
-        int count=(lastoc-fastoc) + 1;
+        car c1 = new car();
 
+        System.out.println(c1.brand);
         
+        }   
         
-        
+class Studen{
+    String name;
+    int roll_nom;
+}
 
-        int mid = ( low + high ) / 2;
+static class Book{
+    String title;
+    int price;
 
-        while  (low<=high){
-            mid = (low + high)/2;
-            if (arr[mid] == target){
-                lastoc = mid;
-                low = mid +1;
-            }
-            if (arr[mid] == target){
-                fastoc = mid;
-                high = mid -1;
-                
-                
-                
-            }else if (arr[mid]< target) {
-                    low = mid + 1;
-            }else{
-                    high=mid-1;
-                }
-            }
-            System.out.println("Target occures : "+ count + " times");
-        }
-        
+    Book(String title ,int price){
+        this.title=title;
+        this.price=price;
+    }
+}
+static class car{
+    String brand;
 
-
-
-
-        
+    car(){
+        brand="Unknown";
+    }
+}
 }
