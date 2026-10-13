@@ -7,7 +7,12 @@ public class f1 {
 
         int low = 0 ;
         int high = arr.length - 1;
-        int index =0;
+        int fastoc=0;
+        int lastoc=0;
+        int count=(lastoc-fastoc) + 1;
+
+        
+        
         
 
         int mid = ( low + high ) / 2;
@@ -15,8 +20,13 @@ public class f1 {
         while  (low<=high){
             mid = (low + high)/2;
             if (arr[mid] == target){
-                index = mid;
+                lastoc = mid;
                 low = mid +1;
+            }
+            if (arr[mid] == target){
+                fastoc = mid;
+                high = mid -1;
+                
                 
                 
             }else if (arr[mid]< target) {
@@ -25,7 +35,7 @@ public class f1 {
                     high=mid-1;
                 }
             }
-            System.out.println("Last occurrence found at index:"+index);
+            System.out.println("Target occures : "+ count + " times");
         }
         
 
