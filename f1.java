@@ -1,32 +1,41 @@
+public class f1{
+static class Rectangle{
+    int length;
+    int width;
 
-public class f1 {
-    
-    public static void main(String[] args) {
-        Phone p1 = new Phone();
-        Phone p2 = new Phone();
-        Phone p3 = new Phone();
+    Rectangle(int l ,int w){
+        length=l;
+        width=w;
+    }
 
-        p1.brand="Samsung";
-        p1.price=30000;
-
-        p2.brand="oppo";
-        p2.price=50000;
-
-        p3.brand="Apple";
-        p3.price=100000;
-
-        p1.show();
-        p2.show();
-        p3.show();
-        
-        }   
-static class Phone{
-    String brand;
-    int price;
-
-    void show(){
-        System.out.println("Brand: "+brand);
-        System.out.println("Price : "+price);
+    void area(){
+        System.out.println("Area of Rectangle :"+(length*width));
     }
 }
+    public static void main(String[] args) {
+
+        Rectangle r1= new Rectangle(12,4);
+        Rectangle r2= new Rectangle(232,4);
+        Rectangle r3= new Rectangle(10,45);
+        Rectangle r4= new Rectangle(56,23);
+        Rectangle r5= new Rectangle(2,4);
+        Rectangle r6= new Rectangle(11,34);
+        Rectangle r7= new Rectangle(22,4);
+        Rectangle r8= new Rectangle(8,56);
+        Rectangle r9= new Rectangle(45,9);
+
+        r1.area();
+        r2.area();
+        r3.area();
+        r4.area();
+        r5.area();
+        r6.area();
+        r7.area();
+        r8.area();
+        r9.area();
+        
+
+
+        
+    }
 }
