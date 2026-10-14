@@ -1,51 +1,31 @@
 public class f1{
-    // static class Student{
-    //     String name;
-    //     int age;
-    //     double marks;
+    static class Employee{
+        String name;
+        int employeeId;
+        double salary;
 
-    //     Student(String name , int age , double marks ){
-    //         this.name=name;
-    //         this.age=age;
-    //         this.marks=marks;
-    //     }
-    //     void displayDetail(){
-    //         System.out.println("Name :"+this.name);
-    //         System.out.println("age :"+this.age);
-    //         System.out.println("Marks :" + this.marks);
-    //     }
-
-    static class BankAccount{
-        String accountHolder;
-        int acountNumber;
-        int balance;
-
-        BankAccount(String accountHolder, int acountNumber ,int balance){
-            this.accountHolder=accountHolder;
-            this.acountNumber=acountNumber;
-            this.balance=balance;
+        Employee(String name ,int employeeId , double salary){
+            this.name=name;
+            this.employeeId=employeeId;
+            this.salary=salary;
         }
 
-        void deposit( double deposit_amount){
-            this.balance += deposit_amount;
-                      
+        void increaseSalary(double amount){
+            this.salary+=amount;
         }
-
-        void  withdraw(double amount){
-            this.balance-=amount;
+        void displayDetails(){
+            System.out.println("employee name :"+this.name);
+            System.out.println("employee ID : "+ this.employeeId);
+            System.out.println("Salary : "+this.salary);
         }
-        void DisplayDetail(){
-            System.out.println("Name of acountholder : "+ this.accountHolder );
-            System.out.println("Acount Number :"+this.acountNumber);
-            System.out.println();
-        }
+    }
+    public static void main(String [] args){
+        Employee e1 = new Employee("Rohan",1001,304000);
+        e1.displayDetails();
+        e1.increaseSalary(40000.0);
+        e1.displayDetails();
 
     }
     
-    public static void main(String[] args) {
-        BankAccount b1 = new BankAccount("Rohan", 10011, 20000000);
-        b1.deposit(45.0);
-        b1.withdraw(569986);
-        b1.DisplayDetail();
-    }
+
 }
