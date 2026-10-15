@@ -28,6 +28,7 @@ public class input{
 
         Rectangle r1=new Rectangle(10,5);
         r1.area();
+        
 
 
     }
