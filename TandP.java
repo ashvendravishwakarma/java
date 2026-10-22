@@ -39,7 +39,7 @@ public class TandP {
         System.out.println("enter first number : "+r);
         
         System.out.println("enter second number");
-        int j=8;
+       
         
 
         int length=45;

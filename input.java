@@ -1,35 +1,49 @@
-public class input{
-    static class Car{
-        int price;
-        String brand;
-    }
 
-    static class Rectangle{
-        int length;
-        int width;
+import java.util.Scanner;
 
-        Rectangle(int l, int w){
-            length =l;
-            width=w;
-
-        }
-
-        void area(){
-            System.out.println("area of the Rectengle :"+(length*width));
-        }
-    }
-
+public class input {
     public static void main(String[] args) {
-        // Car c1 = new Car();
-        // c1.price = 500000;
-        // c1.brand = "BMW";
-        // System.out.println(c1.price);
-        // System.out.println(c1.brand);
+        Scanner sc = new Scanner(System.in);
 
-        Rectangle r1=new Rectangle(10,5);
-        r1.area();
-        
+        System.out.print("Enter product price: ");
+        double price = sc.nextDouble();
 
+        System.out.print("Enter quantity: ");
+        int quantity = sc.nextInt();
 
+        double totalCost = price * quantity;
+
+        System.out.println("Total Cost: " + totalCost);
+
+// ______________________________________________________________________
+
+        System.out.print("Enter basic salary: ");
+        double basicSalary = sc.nextDouble();
+
+        double hra = basicSalary * 0.80;
+        double da = basicSalary * 0.10;
+
+        double grossSalary = basicSalary + hra + da;
+
+        System.out.println("HRA: " + hra);
+        System.out.println("DA: " + da);
+        System.out.println("Gross Salary: " + grossSalary);
+
+// ___________________________________________________________________________
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("After swapping:");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+
+        sc.close();
     }
 }
