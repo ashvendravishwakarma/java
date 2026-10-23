@@ -53,26 +53,30 @@ public class TandP {
         // int price = 40;
         // System.out.println("Total price of product : " + (quantity * price));
 
-        System.out.print("Enter your age: ");
-        int age = sc.nextInt();
+        // System.out.print("Enter your age: ");
+        // int age = sc.nextInt();
 
-        if (age >= 18) {
-            System.out.println("Eligible to vote");
-        } else {
-            System.out.println("Not eligible to vote");
-        }
+        // if (age >= 18) {
+        //     System.out.println("Eligible to vote");
+        // } else {
+        //     System.out.println("Not eligible to vote");
+        // }
 
-        System.out.print("Enter three sides: ");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
+        // System.out.print("Enter three sides: ");
+        // int a = sc.nextInt();
+        // int b = sc.nextInt();
+        // int c = sc.nextInt();
 
-        if (a > 0 && b > 0 && c > 0 &&
-            a + b > c && a + c > b && b + c > a) {
-            System.out.println("Valid triangle");
-        } else {
-            System.out.println("Invalid triangle");
-        }
+        // if (a > 0 && b > 0 && c > 0 &&
+        //     a + b > c && a + c > b && b + c > a) {
+        //     System.out.println("Valid triangle");
+        // } else {
+        //     System.out.println("Invalid triangle");
+        // }
+        // System.out.print("Enter the marks : ");
+        // int marks =sc.nextInt();
+        // String result =(marks>=33)? "Passed":"Fail";
+        // System.out.println("Result :" + result);
 
         sc.close();
 
