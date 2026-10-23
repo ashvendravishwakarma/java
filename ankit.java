@@ -1,10 +1,31 @@
-class ankit{
-    public static void main(String[] args) {
-        for (int i=1;i<=5;i++){
-            for(int j=1;j<=i;j++){
-                System.out.print(j);
-            }
-            System.out.println();
-        }
+public class ankit{
+    public static void main(String [] args){
+
     }
 }
+
+class Employee{
+    String name;
+    double basicSalary;
+
+    Employee(String n , double b){
+        name=n;
+        basicSalary=b;
+
+    }
+
+    public void displayDetails(){
+        System.out.println("NAME :"+ name );
+        System.out.println("SALARY ;" + basicSalary);
+
+    }
+class Manager extends Employee {
+    int bonus;
+
+    Manager(String name, int salary, int bonus) {
+    super(name, salary);
+        this.bonus = bonus;
+    }
+}
+}
+
