@@ -1,65 +1,92 @@
 // public class f{
 //     public static void main(String[] args) {
-        
-//         // for (int i=1;i<=5;i++){
-//         //     for(int j=1;j<=i;j++){
-//         //         System.out.print("*");
-//         //     }
-//         //     System.out.println();
-//         // }
-
-//     //    for (int i =5;i>=1;i--){
-//     //         for(int j=1;j<=i;j++){
-//     //             System.out.print(j);
-//     //         }
-//     //         System.out.println();
-//     //     }
-
-//         // int[] arr = {10, 20, 30, 40, 50};
-//         // for(int i=0 ;i<arr.length;i++){
-//         //     System.out.println(arr[i]);
-//         // }
-//         // int[] arr = {10, 20, 30, 40, 50,0};
-//         // int index=0;
-//         // int value=45;
-
-//         // for(int i =arr.length-1;i>1;i--){
-//         //     arr[i]=arr[i-1];
-
-//         // }
-//         // arr[index]=value;
-//         // for(int i=0 ;i<arr.length;i++){
-//         //     System.out.println(arr[i]);
-//         // }
-
-//         int x=6;
-//         x--;
-//         System.out.println(x);
-//         System.out.println(x++);
-//         System.out.println(++x);
-//         System.out.println(++x);
-//         System.out.println(x);
-
+//         Student s1 = new Student();
+//         s1.setage(20);
+//         s1.getage();
         
 //     }
 // }
-public class f{
-    public static void main(String[] args) {
-        String a="Programming";
-        System.out.println("length : "+a.length());
+// class Student{
+//     private int age;
 
-        String b="hello";
-        System.out.println(b.charAt(0));
-        System.out.println(b.charAt((b.length())-1));
+//     void setage(int a){
+//         age=a;
+//     }
 
-        System.out.println(b.toUpperCase());
+//     void getage(){
+//         System.out.println("age age is : "+age);
+//     }
+// }
 
-        String d="banana";
-        System.out.println(d);
+// public class f{
+//     public static void main(String[] args) {
+//         BankAcount b1= new BankAcount();
+//         b1.deposit(1000);
+//         b1.getbalance();
+        
+//     }
+// }
+// class BankAcount{
+//     private double balance;
 
+//     void deposit(double amount){
+//         balance+=amount;
+//     }
+//     void getbalance(){
+//         System.out.println("Your account balance : "+balance);
+//     }
 
-        char v='a';
-        for (int i =0)
+// }
 
-    }
-}
+// public class f{
+//     public static void main(String[] args) {
+//         Employee e1= new Employee();
+//         e1.set(25000);
+//         e1.get();
+        
+        
+//     }
+// }
+// class Employee{
+//     private double salary;
+
+//     public void set(double salary){
+//         if(salary >0){
+//             this.salary = salary;
+//         }else{
+//             System.out.println("enter valid salary ");
+//         }
+
+//     }
+
+//     public void get(){
+//         System.out.println("Your Salary is : " + this.salary);
+//     }
+// }
+
+// public class f{
+//     public static void main(String[] args) {
+//         User u1 = new User();
+//         u1.setpass("ASHVENDRA!@#");
+//         u1.chackpassward("ASHVENDRA!@#");
+//         u1.chackpassward("EE");
+        
+//     }
+// }
+
+// class User{
+//     private String passward;
+
+//     public void setpass(String pass){
+//         passward=pass;
+//     }
+
+//     public void chackpassward(String yourpass){
+//         if (passward.equals(yourpass)){
+//             System.out.println("True");
+//         }else{
+//             System.out.println("False");
+//         }
+//     } 
+
+// }
