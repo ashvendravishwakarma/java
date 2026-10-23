@@ -1,31 +1,39 @@
 public class ankit{
-    public static void main(String [] args){
+    public static void main(String[] args) {
+        Car c1 = new Car("Toyota",120, "Petrol");
+
+        c1.displayVehicle();
+        c1.displaycar();        
+    }
+}
+class Vehical{
+    String brand;
+    int speed;
+
+    Vehical(String brand , int speed){
+        this.brand=brand;
+        this.speed=speed;
+    }
+
+    public void displayVehicle(){
+        System.out.println("Brand :" + this.brand);
+        System.out.println("Speed : "+ this.speed);
+    }
+
+
+}
+class Car extends Vehical{
+    String fuelType;
+
+    Car(String brand , int speed , String fuel){
+        super(brand , speed);
+        fuelType=fuel;
+    }
+
+    public void displaycar(){
+        System.out.println("Brand :" + brand);
+        System.out.println("Speed : "+ speed);
+        System.out.println("Fuel : "+ fuelType);
 
     }
 }
-
-class Employee{
-    String name;
-    double basicSalary;
-
-    Employee(String n , double b){
-        name=n;
-        basicSalary=b;
-
-    }
-
-    public void displayDetails(){
-        System.out.println("NAME :"+ name );
-        System.out.println("SALARY ;" + basicSalary);
-
-    }
-class Manager extends Employee {
-    int bonus;
-
-    Manager(String name, int salary, int bonus) {
-    super(name, salary);
-        this.bonus = bonus;
-    }
-}
-}
-
