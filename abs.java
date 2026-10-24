@@ -81,6 +81,7 @@ class Developer extends Employee {
     @Override
     double calculateBonus() {
         return getSalary() * 10 / 100;
+        // that is vary dificult i dont know about the cnstruction that is vary amaging 
     }
      
 
