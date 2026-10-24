@@ -1,21 +1,40 @@
 public class oop {
-    static class student {
-        String name;
-        int age;
+    // static class student {
+    //     String name;
+    //     int age;
 
-        student(String n, int a) {
-            name = n;
-            age = a;
-        }
+    //     student(String n, int a) {
+    //         name = n;
+    //         age = a;
+    //     }
 
-        void display() {
-            System.out.println("NAME :" + name);
-            System.out.println("AGE :" + age);
+    //     void display() {
+    //         System.out.println("NAME :" + name);
+    //         System.out.println("AGE :" + age);
+    //     }
+    // }
+    public class Student{
+        String nmae;
+        int rollnumber;
+        int marks;
+
+        Student(String nmae , int rollnumber ,int mark){
+            this.nmae = nmae;
+            this.rollnumber = rollnumber;
+            this.marks=mark;
+
         }
     }
 
     public static void main(String[] args) {
-        student s1 = new student("Alice", 20);
-        s1.display();
+    //     student s1 = new student("Alice", 20);
+    //     s1.display();
+           
+        //    Student s1 = new  Student("rianm",33,234); 
+           
+
+
+
+
     }
 }
