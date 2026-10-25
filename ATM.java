@@ -5,49 +5,48 @@ public class ATM {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        SavingAccount b1 = new SavingAccount("Rohan", 20000, "ROHAN!!!");
-        b1.checkBalance();
+        //BankAccount b1 = new BankAccount("Rohan", 20000, "ROHAN!!!");
+        BankAccount b1 = new BankAccount("Rohan", 20000, "ROHAN!!!");
+        b1.displayWelcome();
 
-        b1.showAccountType();
-        b1.showAccountType();
+        while (true) {
+            System.out.println(
+                    "===== ATM MENU =====\n1. Check Balance\n2. Deposit Money\n3. WithdrawMoney\n4.Account Holder\n5. Exit\nEnter your choice:");
+            String choice = sc.next();
 
-        // while (true) {
-        // System.out.println(
-        // "===== ATM MENU =====\n1. Check Balance\n2. Deposit Money\n3. Withdraw
-        // Money\n4. Exit\nEnter your choice:");
-        // System.out.println("Enter your choice : ");
-        // String choice = sc.next();
+            switch (choice) {
+                case "1":
+                    b1.checkBalance();
+                    break;
+                case "2":
+                    System.out.print("Enter Deposit amount : ");
+                    int dep = sc.nextInt();
+                    System.out.print("Enter PIN : ");
+                    String enterpin = sc.next();
+                    b1.deposit(dep, enterpin);
 
-        // switch (choice) {
-        // case "1":
-        // b1.checkBalance();
-        // break;
-        // case "2":
-        // System.out.print("Enter Deposit amount : ");
-        // int dep = sc.nextInt();
-        // System.out.print("Enter PIN : ");
-        // String enterpin = sc.next();
-        // b1.deposit(dep, enterpin);
+                    break;
+                case "3":
+                    System.out.print("Enter Deposit amount : ");
+                    int w = sc.nextInt();
+                    System.out.print("Enter PIN : ");
+                    String enterpin1 = sc.next();
+                    b1.withdraw(w, enterpin1);
+                    // withdraw money
+                    break;
+                case "4":
+                    b1.displayAccountHolder();
 
-        // break;
-        // case "3":
-        // System.out.print("Enter Deposit amount : ");
-        // int w = sc.nextInt();
-        // System.out.print("Enter PIN : ");
-        // String enterpin1 = sc.next();
-        // b1.withdraw(w, enterpin1);
-        // // withdraw money
-        // break;
-        // case "4":
+                    break;
+                case "5":
+                    return;
 
-        // break;
+                default:
+                    System.out.println("Invalid choice !!!!!!!");
+                    break;
 
-        // default:
-        // System.out.println("Invalid choice !!!!!!!");
-        // break;
-
-        // }
-        // }
+            }
+        }
     }
 }
 
@@ -78,11 +77,17 @@ class BankAccount {
 
     void withdraw(int amount, String enterPin) {
         if (enterPin.equals(pin)) {
-            if ((amount > 0) && (balance >= amount)) {
-                balance -= amount;
-                System.out.println("Amount withdraw Successfully!!!");
+            if (amount <= 0) {
+
+                System.out.println("Invalid Amount!!");
             } else {
-                System.out.println("Insufficient balance");
+                if (amount > balance) {
+                    System.out.println("Insufficient balance !!");
+                } else {
+                    balance -= amount;
+                    System.out.println("withdraw successfully.......");
+                }
+
             }
         } else {
             System.out.println("Invlid PIN !!");
@@ -93,8 +98,15 @@ class BankAccount {
         System.out.println("Your balance : " + balance);
     }
 
-    void showAccountType() {
-        System.out.println("General Bank Account");
+    
+
+    void displayAccountHolder() {
+        System.out.println("Account Holder: " + accountHolder);
+    }
+    
+    
+    void displayWelcome() {
+        System.out.println("Welcome to Savings Account");
     }
 
 }
@@ -108,8 +120,14 @@ class SavingAccount extends BankAccount {
     void showBalane() {
         checkBalance();
     }
+
+    // @Override
+    // void showAccountType() {
+    // System.out.println("Savings Account !!!");
+    // }
+
     @Override
-    void showAccountType() {
-        System.out.println("Savings Account !!!");
+    void displayWelcome() {
+        System.out.println("Welcome to Savings Account");
     }
 }
