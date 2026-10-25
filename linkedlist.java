@@ -109,87 +109,160 @@
 //     }
 // }
 
+// public class linkedlist {
+//     public static class Node {
+//         int data;
+//         Node next;
+
+//         Node(int data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+
+//     public static class list_RR {
+//         Node head = null;
+//         Node tail = null;
+
+//         //insertion at the end
+//         void insertAtEnd(int value) {
+//             Node temp = new Node(value);
+//             if (head == null) {
+//                 head = temp;
+//                 tail = temp;
+//             } else {
+//                 tail.next = temp;
+//                 tail = temp;
+//             }
+//         }
+
+//         //insertion at the biggining
+//         void insertAtHead(int value) {
+//             Node temp = new Node(value);
+//             if (head == null) {
+//                 head = temp;
+//                 tail = temp;
+//             } else {
+//                 temp.next = head;
+//                 head = temp;
+//             }
+//         }
+
+//         //insertion at the specific index and value 
+//         void inseratIndex(int idx , int val){
+//             Node t = new Node(val);
+//             Node temp =head;
+
+//             for(int i =1 ;i<=(idx-1);i++){
+//                 temp = temp.next;
+//             }
+//             t.next=temp.next;
+//             temp.next=t;
+
+//         }
+
+//         void display() {
+//             Node temp = head;
+//             while (temp != null) {
+//                 System.out.print(temp.data + " ");
+//                 temp = temp.next;
+//             }
+//             System.out.println();
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         list_RR a = new list_RR();
+//         // a.insertAtEnd(5);
+//         // a.display();
+//         // a.insertAtHead(6);
+//         // a.display();
+//         // a.insertAtHead(2);
+//         // a.display();
+//         // a.insertAtEnd(7);
+//         // a.display();
+//         // a.insertAtHead(3);
+//         // a.display();
+//         // a.insertAtEnd(9);
+//         // a.inseratIndex(3,24);
+//         // a.display();
+//         // a.insertAtHead(6);
+//         // a.display();
+//         // a.insertAtHead(14);
+//         // a.display();
+//     }
+// }
+
+// public class linkedlist {
+
+//     public static class Node {
+//         int data;
+//         Node next;
+
+//         Node(int data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+
+//     public static class bigning {
+//         Node head = null;
+//         Node tail = null;
+
+//         void insertAtBigg(int val){
+//             Node n = new Node(val);
+            
+//             if(head == null){
+//                 head = n;
+//                 tail = n;
+//             }else{
+//                 n.next=head;
+//                 head = n;
+//             }
+//         }
+
+//         void display() {
+//             Node A = head;
+//             while (A != null) {
+//                 System.out.print(A.data + " ");
+//                 A = A.next;
+//             }
+//             System.out.println();
+
+//         }
+//     }
+
+    
+
+//     public static void main(String[] args) {
+//         bigning a = new bigning();
+//         a.insertAtBigg(10);
+//         a.insertAtBigg(20);
+//         a.insertAtBigg(30);
+//         a.display();
+
+//     }
+// }
 public class linkedlist {
-    public static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static class list_RR {
-        Node head = null;
-        Node tail = null;
-        
-        //insertion at the end
-        void insertAtEnd(int value) {
-            Node temp = new Node(value);
-            if (head == null) {
-                head = temp;
-                tail = temp;
-            } else {
-                tail.next = temp;
-                tail = temp;
-            }
-        }
-       
-        //insertion at the biggining
-        void insertAtHead(int value) {
-            Node temp = new Node(value);
-            if (head == null) {
-                head = temp;
-                tail = temp;
-            } else {
-                temp.next = head;
-                head = temp;
-            }
-        }
-
-        //insertion at the specific index and value 
-        void inseratIndex(int idx , int val){
-            Node t = new Node(val);
-            Node temp =head;
-
-            for(int i =1 ;i<=(idx-1);i++){
-                temp = temp.next;
-            }
-            t.next=temp.next;
-            temp.next=t;
-
-
-        }
-
-        void display() {
-            Node temp = head;
-            while (temp != null) {
-                System.out.print(temp.data + " ");
-                temp = temp.next;
-            }
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
-        list_RR a = new list_RR();
-        a.insertAtEnd(5);
-        a.display();
-        a.insertAtHead(6);
-        a.display();
-        a.insertAtHead(2);
-        a.display();
-        a.insertAtEnd(7);
-        a.display();
-        a.insertAtHead(3);
-        a.display();
-        a.insertAtEnd(9);
-        a.inseratIndex(3,24);
-        a.display();
-        a.insertAtHead(6);
-        a.display();
-        a.insertAtHead(14);
-        a.display();
+        int[] arr = {64, 25,66,0, 11};
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            int temp = arr[i];
+            arr[i]= arr[minIndex];
+            arr[minIndex]=temp;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
