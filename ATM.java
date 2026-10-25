@@ -5,13 +5,14 @@ public class ATM {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //BankAccount b1 = new BankAccount("Rohan", 20000, "ROHAN!!!");
+        // BankAccount b1 = new BankAccount("Rohan", 20000, "ROHAN!!!");
         BankAccount b1 = new BankAccount("Rohan", 20000, "ROHAN!!!");
-        b1.displayWelcome();
+        // b1.displayHistory();
+        // b1.displayWelcome();
 
         while (true) {
             System.out.println(
-                    "===== ATM MENU =====\n1. Check Balance\n2. Deposit Money\n3. WithdrawMoney\n4.Account Holder\n5. Exit\nEnter your choice:");
+                    "===== ATM MENU =====\n1. Check Balance\n2. Deposit Money\n3. WithdrawMoney\n4.Account Holder\n5. chack interest\n6. chnge pin\n7. display History \n8. Exit\nEnter your choice:");
             String choice = sc.next();
 
             switch (choice) {
@@ -39,6 +40,19 @@ public class ATM {
 
                     break;
                 case "5":
+                    b1.calculateInterest();
+                    break;
+                case "6":
+                    System.out.print("Enter current pin : ");
+                    String currentPin = sc.next();
+                    System.out.print("New pin  : ");
+                    String newPin = sc.next();
+                    b1.changePin(currentPin, newPin);
+                    break;
+                case "7":
+                    b1.displayHistory();
+                    break;
+                case "8":
                     return;
 
                 default:
@@ -61,11 +75,33 @@ class BankAccount {
         this.pin = pin;
     }
 
+    String[] transaction = new String[100];
+    int transactionCount = 0;
+
+    void displayHistory() {
+    if (transactionCount == 0) {
+        System.out.println("No transactions yet");
+        return;
+    }
+
+    System.out.println("===== TRANSACTION HISTORY =====");
+
+    for (int i = 0; i < transactionCount; i++) {
+        System.out.println((i + 1) + ". " + transaction[i]);
+    }
+}
+
+    double getBalance() {
+        return balance;
+    }
+
     void deposit(int amount, String enterPin) {
         if (enterPin.equals(pin)) {
             if (amount > 0) {
                 balance += amount;
                 System.out.println("Amount deposist Successfully!!!");
+                transaction[transactionCount] = "Deposit : " + amount;
+                transactionCount++;
             } else {
                 System.out.println("invalid amount");
             }
@@ -85,6 +121,8 @@ class BankAccount {
                     System.out.println("Insufficient balance !!");
                 } else {
                     balance -= amount;
+                    transaction[transactionCount] = "withdraw : " + amount;
+                    transactionCount++;
                     System.out.println("withdraw successfully.......");
                 }
 
@@ -98,15 +136,26 @@ class BankAccount {
         System.out.println("Your balance : " + balance);
     }
 
-    
+    void changePin(String currentpin, String newPin) {
+        if (currentpin.equals(pin)) {
+            pin = newPin;
+            System.out.println("Update pin succesfully.....");
+
+        } else {
+            System.out.println("Invalid Pin");
+        }
+    }
 
     void displayAccountHolder() {
         System.out.println("Account Holder: " + accountHolder);
     }
-    
-    
+
     void displayWelcome() {
         System.out.println("Welcome to Savings Account");
+    }
+
+    void calculateInterest() {
+        System.out.println("YOUR !1 year intrest : " + ((balance * 4) / 100));
     }
 
 }
@@ -121,13 +170,14 @@ class SavingAccount extends BankAccount {
         checkBalance();
     }
 
-    // @Override
-    // void showAccountType() {
-    // System.out.println("Savings Account !!!");
-    // }
-
     @Override
     void displayWelcome() {
         System.out.println("Welcome to Savings Account");
+    }
+
+    @Override
+    void calculateInterest() {
+
+        System.out.println("YOUR !1 year intrest : " + ((super.getBalance() * 4) / 100));
     }
 }
